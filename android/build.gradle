@@ -63,6 +63,22 @@ android {
     buildConfig true
   }
 
+  // Add packaging options to handle duplicate files
+  packagingOptions {
+    exclude 'META-INF/NOTICE.md'
+    exclude 'META-INF/LICENSE.md'
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/ASL2.0'
+    exclude 'META-INF/*.txt'
+    exclude 'META-INF/*.properties'
+    pickFirst 'META-INF/INDEX.LIST'
+    pickFirst 'META-INF/mailcap.default'
+    pickFirst 'META-INF/mimetypes.default'
+  }
+
+
   buildTypes {
     release {
       minifyEnabled false
@@ -100,6 +116,13 @@ def kotlin_version = getExtOrDefault("kotlinVersion")
 dependencies {
   implementation "com.facebook.react:react-android"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+  // JavaMail dependencies for email functionality
+  implementation "com.sun.mail:android-mail:1.6.7"
+  implementation "com.sun.mail:android-activation:1.6.7"
+
+  // Kotlin coroutines for background processing
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 }
 
 if (isNewArchitectureEnabled()) {

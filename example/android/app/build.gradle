@@ -85,6 +85,22 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    
+    // Add packaging options to handle duplicate files from JavaMail
+    packagingOptions {
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/*.txt'
+        exclude 'META-INF/*.properties'
+        pickFirst 'META-INF/INDEX.LIST'
+        pickFirst 'META-INF/mailcap.default'
+        pickFirst 'META-INF/mimetypes.default'
+    }
+    
     signingConfigs {
         debug {
             storeFile file('debug.keystore')

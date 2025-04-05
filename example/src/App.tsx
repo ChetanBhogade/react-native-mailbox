@@ -8,10 +8,8 @@ import {
   Alert,
   Switch,
 } from 'react-native';
-import { multiply, sendMail, type MailConfig } from 'react-native-mailbox';
+import { sendMail, type MailConfig } from 'react-native-mailbox';
 import { useState } from 'react';
-
-const result = multiply(3, 8);
 
 export default function App() {
   // Form states
@@ -220,8 +218,6 @@ export default function App() {
             }
           />
         </View>
-
-        <Text style={styles.multiplierText}>Multiply Result: {result}</Text>
       </View>
     </ScrollView>
   );

@@ -12,7 +12,6 @@ export interface MailConfig {
 }
 
 export interface Spec extends TurboModule {
-  multiply(a: number, b: number): number;
   sendMail(
     mailConfig: MailConfig,
     subject: string,

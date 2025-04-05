@@ -6,12 +6,6 @@
 @implementation Mailbox
 RCT_EXPORT_MODULE()
 
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
-
-    return result;
-}
-
 - (void)sendMail:(JS::NativeMailbox::MailConfig &)mailConfig subject:(nonnull NSString *)subject body:(nonnull NSString *)body recipients:(nonnull NSArray *)recipients bcc:(nonnull NSArray *)bcc attachmentPaths:(nonnull NSArray *)attachmentPaths attachmentNames:(nonnull NSArray *)attachmentNames resolve:(nonnull RCTPromiseResolveBlock)resolve reject:(nonnull RCTPromiseRejectBlock)reject { 
   <#code#>
 }
